@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!--
+  - This file is included by the struts.xml file as an example
+  - of how to break up the configuration file into multiple files.
+-->
+<struts>
+  <!-- 根目录 / -->
+    <package name="root" namespace="/" extends="default"> 
+    	<action name="" class="com.free4lab.freemonitor.action.student.GetAllMeetingRoomInfoAction">
+			<result name="success">/main.jsp</result>
+		</action>
+
+		<action name="login" class="com.free4lab.freemonitor.account.LoginAction">
+			<result name="success">/main.jsp</result>
+		</action>
+
+    	<action name="main" class="com.free4lab.freemonitor.action.student.GetAllMeetingRoomInfoAction">
+			<result name="success">/main.jsp</result>
+		</action>
+		
+    	<action name="reservation" class="com.free4lab.freemonitor.action.student.GetAllReservationAction">
+			<result name="success">/reservation.jsp</result>
+		</action>
+		
+		<action name="reserve" class="com.free4lab.freemonitor.action.student.InsertReserveAction">
+			<result type="json"></result>
+		</action> 
+		
+		<action name="getold" class="com.free4lab.freemonitor.action.student.GetOldReservationAction">
+			<result name="success">/_facebox_edit.jsp</result>
+		</action>
+		
+		<action name="new" class="com.free4lab.freemonitor.action.student.GetAllReservationAction">
+			<result name="success">/_facebox.jsp</result>
+		</action>
+		
+		<action name="edit" class="com.free4lab.freemonitor.action.student.EditReserveAction">
+			<result type="json"></result>
+		</action> 
+		
+		<action name="remove" class="com.free4lab.freemonitor.action.student.RemoveReserveAction">
+			<result type="json"></result>
+		</action> 
+		
+		<action name="weekview" class="com.free4lab.freemonitor.action.student.GetAllReservationAction">
+		<result name="success">/week_view.jsp</result>
+		</action> 
+    </package>
+</struts>
